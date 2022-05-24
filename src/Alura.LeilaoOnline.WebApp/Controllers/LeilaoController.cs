@@ -1,7 +1,8 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Alura.LeilaoOnline.WebApp.Dados;
 using Alura.LeilaoOnline.WebApp.Models;
+using Alura.LeilaoOnline.WebApp.Dados.EfCore;
+using Alura.LeilaoOnline.WebApp.Dados;
 
 namespace Alura.LeilaoOnline.WebApp.Controllers
 {
@@ -9,12 +10,12 @@ namespace Alura.LeilaoOnline.WebApp.Controllers
     {
 
         AppDbContext _context;
-        LeilaoDAO _dao;
+        ILeilaoDao _dao;
 
         public LeilaoController()
         {
             _context = new AppDbContext();
-            _dao = new LeilaoDAO();
+            _dao = new LeilaoDaoComEFCore();
         }
     
         public IActionResult Index()

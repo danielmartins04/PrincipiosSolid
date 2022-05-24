@@ -4,13 +4,13 @@ using Alura.LeilaoOnline.WebApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace Alura.LeilaoOnline.WebApp.Dados
+namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
 {
-    public class LeilaoDAO
+    public class LeilaoDaoComEFCore : ILeilaoDao
     {
         AppDbContext _context;
 
-        public LeilaoDAO()
+        public LeilaoDaoComEFCore()
         {
             _context = new AppDbContext();
         }
